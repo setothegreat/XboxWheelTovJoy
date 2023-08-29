@@ -1,0 +1,118 @@
+﻿<Window x:Class="XboxWheelTovJoyUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XboxWheelTovJoyUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="auto" Width="auto">
+    <Grid>
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock x:Name="WheelStatusText" Text="Wheel Status: " Margin="0,0,0,10" HorizontalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBlock x:Name="StatusText" Text="Status: " Margin="0,0,0,10" HorizontalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <TextBlock x:Name="VJoyStatusText" Text="vJoy Status: " Margin="0,0,0,10" HorizontalAlignment="Center" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock x:Name="WheelStatusTextInfo" Text="-" Margin="0,0,0,10" HorizontalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBlock x:Name="StatusTextInfo" Text="-" Margin="0,0,0,10" HorizontalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <TextBlock x:Name="VJoyStatusTextInfo" Text="-" Margin="0,0,0,10" HorizontalAlignment="Center" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <ToggleButton x:Name="ToggleBtn" Content="Start" Click="ToggleBtn_Click" Width="500" Height="200" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,20,0"/>
+                <TextBox x:Name="LogTextBox" IsReadOnly="True" TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="1"/>
+            </Grid>
+
+
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock x:Name="ThrottleText" Text="Throttle" Margin="20" />
+                    <ProgressBar x:Name="ThrottleProgress" Minimum="0" Maximum="1" Value="0.5" Width="300" Margin="20" />
+                    <TextBlock x:Name="WheelText" Text="Wheel" Margin="20" />
+                    <ProgressBar x:Name="WheelProgress" Minimum="-1" Maximum="1" Value="0.5" Width="300" Margin="20" />
+                    <TextBlock x:Name="BrakeText" Text="Brake" Margin="20" />
+                    <ProgressBar x:Name="BrakeProgress" Minimum="0" Maximum="1" Value="0.5" Width="300" Margin="20" />
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock x:Name="TriggerLeftText" Text="Trigger Left: " Margin="0,20,0,20" />
+                    <TextBlock x:Name="TriggerLeftInfo" Text="-" Margin="25,20,200,20" />
+                    <TextBlock x:Name="TriggerRightText" Text="Trigger Right: " Margin="200,20,0,20" />
+                    <TextBlock x:Name="TriggerRightInfo" Text="-" Margin="25,20,0,20" />
+                </StackPanel>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" x:Name="Button1Text" Text="Button 1: " Margin="40,20,40,20" />
+                    <TextBlock Grid.Column="1" x:Name="Button1Info" Text="-" Margin="-40,20,40,20" />
+                    <TextBlock Grid.Column="2" x:Name="Button2Text" Text="Button 2: " Margin="0,20,40,20" />
+                    <TextBlock Grid.Column="3" x:Name="Button2Info" Text="-" Margin="-40,20,40,20" />
+                    <TextBlock Grid.Column="4" x:Name="Button3Text" Text="Button 3: " Margin="40,20,40,20" />
+                    <TextBlock Grid.Column="5" x:Name="Button3Info" Text="-" Margin="-40,20,0,20" />
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" x:Name="Button4Text" Text="Button 4: " Margin="40,20,40,20" />
+                    <TextBlock Grid.Column="1" x:Name="Button4Info" Text="-" Margin="-40,20,40,20" />
+                    <TextBlock Grid.Column="2" x:Name="Button5Text" Text="Button 5: " Margin="0,20,40,20" />
+                    <TextBlock Grid.Column="3" x:Name="Button5Info" Text="-" Margin="-40,20,0,20" />
+                    <TextBlock Grid.Column="4" x:Name="Button6Text" Text="Button 6: " Margin="40,20,40,20" />
+                    <TextBlock Grid.Column="5" x:Name="Button6Info" Text="-" Margin="-40,20,40,20" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
